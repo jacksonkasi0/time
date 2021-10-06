@@ -7,7 +7,7 @@ let date = new Date();
 
 let timeStamp = date.toUTCString();
 
-fs.appendFile("date.txt", timeStamp + " la", err => {
+fs.writeFile("date.txt", timeStamp, err => {
   err && console.error(err);
 });
 
