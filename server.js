@@ -20,9 +20,9 @@ function getDate() {
     time = data;
   });
 
-  //   setTimeout(() => {
-  //     getDate();
-  //   }, 100);
+  setTimeout(() => {
+    getDate();
+  }, 100);
 
   function getDate() {
     app.get("/", (req, res) => {
