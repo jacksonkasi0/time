@@ -20,14 +20,16 @@ let timeStamp = date.toUTCString();
 //   time = data;
 // });
 
-setTimeout(() => {
-  getDate();
-}, 100);
+// setTimeout(() => {
+//   getDate();
+// }, 100);
 
-function getDate() {
-  app.get("/", (req, res) => {
-    res.send(`<h1> The Current TimeStamp : ${timeStamp}</h1>`);
-  });
-}
+// function getDate() {
+app.get("/", (req, res) => {
+  res.send(`<h1> The Current TimeStamp : ${timeStamp}</h1>`);
+});
+// }
 
-app.listen(5000);
+app.listen(process.env.PORT || 5000, () => {
+  console.log("server run fine");
+});
