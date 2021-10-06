@@ -31,9 +31,9 @@ function getDate() {
   }
 }
 
-window.onload = function() {
-  alert("kasi");
-};
+// window.onload = function() {
+//   alert("kasi");
+// };
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("server run fine");
