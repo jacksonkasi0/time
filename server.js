@@ -32,6 +32,6 @@ if (fs.existsSync("Date")) {
   });
 }
 
-//sorry, i will fulfil  it after interview .
+//sorry, i will fulfil it after interview .
 
 app.listen(process.env.PORT || 5000);
