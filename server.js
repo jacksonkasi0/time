@@ -1,38 +1,37 @@
 let fs = require("fs");
+let path = require("path");
+// ----------
 let express = require("express");
-
 const app = express();
 
 let date = new Date();
-
 let timeStamp = date.toUTCString();
 
-fs.writeFile("date.txt", timeStamp, err => {
-  err && console.error(err);
-});
-
-let time;
-fs.readFile("date.txt", "utf-8", (err, data) => {
-  if (err) {
-    console.error(err);
-  }
-  time = data;
-});
-
-setTimeout(() => {
-  getDate();
-}, 100);
-
-function getDate() {
-  app.get("/", (req, res) => {
-    res.send(`<h1> The Current TimeStamp : ${time}</h1>`);
+if (!fs.existsSync("Date")) {
+  fs.mkdirSync("Date");
+  fs.writeFile(path.resolve("Date", "date.txt"), timeStamp, err => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log("file created successfully!");
+    }
+  });
+} else {
+  fs.writeFile(path.resolve("Date", "date.txt"), timeStamp, err => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log("file created successfully");
+    }
   });
 }
 
-// window.onload = function() {
-//   alert("kasi");
-// };
+if (fs.existsSync("Date")) {
+  app.get("/", (req, res) => {
+    res.sendFile(path.resolve("./Date/date.txt"));
+  });
+}
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log("server run fine");
-});
+//sorry, i will fulfil it after interview .
+
+app.listen(process.env.PORT || 5000);
