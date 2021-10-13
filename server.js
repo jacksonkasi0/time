@@ -90,6 +90,8 @@ app.get("/", (req, res) => {
        ${Data}
         </div>
 
+        <script   src="./time.js"></script> <!-- only for run date function -->
+        
         <script  type="module" src="./file.js"></script> 
      
       </body>
