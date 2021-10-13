@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: lightskyblue;
+}
+
+.nav span {
+  color: white;
+}
+
+img {
+  width: 100px;
+}
+
+#file {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
