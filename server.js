@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
     });
 
     // res.json(data);
-
+    Data = [];
     data.forEach(item => {
       Data.push(
         ` 
