@@ -43,6 +43,7 @@ app.get("/", (req, res) => {
 
     // res.json(data);
 
+  Data = [];
     data.forEach(item => {
       Data.push(
         ` 
@@ -96,8 +97,10 @@ app.get("/", (req, res) => {
     </html>
     `
     );
-  });
+  }); 
 });
+
+
 
 app.listen(process.env.PORT || 5000);
 
